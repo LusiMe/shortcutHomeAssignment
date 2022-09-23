@@ -1,9 +1,3 @@
-//
-//  shortcutHomeAssignmentUITests.swift
-//  shortcutHomeAssignmentUITests
-//
-//  Created by Mark Parfenov on 23/09/2022.
-//
 
 import XCTest
 

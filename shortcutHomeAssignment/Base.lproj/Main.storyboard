@@ -87,6 +87,7 @@
             </objects>
             <point key="canvasLocation" x="927.69230769230762" y="-2.1327014218009479"/>
         </scene>
+        <!--Details View Controller-->
         <scene sceneID="h5t-DE-PoD">
             <objects>
                 <viewController storyboardIdentifier="detailsViewController" id="FBA-Sz-UjG" customClass="DetailsViewController" customModule="shortcutHomeAssignment" customModuleProvider="target" sceneMemberID="viewController">

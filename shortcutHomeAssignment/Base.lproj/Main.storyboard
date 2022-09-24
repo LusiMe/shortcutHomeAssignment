@@ -87,6 +87,62 @@
             </objects>
             <point key="canvasLocation" x="927.69230769230762" y="-2.1327014218009479"/>
         </scene>
+        <scene sceneID="h5t-DE-PoD">
+            <objects>
+                <viewController storyboardIdentifier="detailsViewController" id="FBA-Sz-UjG" customClass="DetailsViewController" customModule="shortcutHomeAssignment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="olJ-Xq-h96">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Nv-Jt-2Mb">
+                                <rect key="frame" x="16.000000000000004" y="47" width="41.333333333333343" height="20.333333333333329"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Label">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHY-RT-l9a">
+                                <rect key="frame" x="16.000000000000004" y="85.333333333333329" width="41.333333333333343" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q47-TM-jQ3">
+                                <rect key="frame" x="16.000000000000004" y="113.33333333333333" width="41.333333333333343" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ar7-sh-jok"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="q47-TM-jQ3" firstAttribute="top" secondItem="AHY-RT-l9a" secondAttribute="bottom" constant="7.6666666666666288" id="AXB-As-tyx"/>
+                            <constraint firstItem="AHY-RT-l9a" firstAttribute="top" secondItem="8Nv-Jt-2Mb" secondAttribute="bottom" constant="18" id="SbL-oD-8cr"/>
+                            <constraint firstItem="ar7-sh-jok" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="AHY-RT-l9a" secondAttribute="trailing" symbolic="YES" id="T3Q-uw-M1G"/>
+                            <constraint firstItem="ar7-sh-jok" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8Nv-Jt-2Mb" secondAttribute="trailing" symbolic="YES" id="ddF-qN-lvP"/>
+                            <constraint firstItem="8Nv-Jt-2Mb" firstAttribute="leading" secondItem="ar7-sh-jok" secondAttribute="leading" constant="16" id="ig1-JM-RPC"/>
+                            <constraint firstItem="8Nv-Jt-2Mb" firstAttribute="top" secondItem="ar7-sh-jok" secondAttribute="top" id="mZ1-Ja-MWy"/>
+                            <constraint firstItem="q47-TM-jQ3" firstAttribute="leading" secondItem="ar7-sh-jok" secondAttribute="leading" constant="16" id="r2c-Yt-wdC"/>
+                            <constraint firstItem="AHY-RT-l9a" firstAttribute="leading" secondItem="ar7-sh-jok" secondAttribute="leading" constant="16" id="v5S-1M-0id"/>
+                            <constraint firstItem="ar7-sh-jok" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="q47-TM-jQ3" secondAttribute="trailing" symbolic="YES" id="xY3-Va-TwZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="comicDate" destination="AHY-RT-l9a" id="cny-A3-WLk"/>
+                        <outlet property="comicDetails" destination="q47-TM-jQ3" id="CZa-7W-V4e"/>
+                        <outlet property="comicTitle" destination="8Nv-Jt-2Mb" id="h3n-T7-CCm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ioo-ib-y2M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1633.8461538461538" y="-2.1327014218009479"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="PRe-Hq-fma">
             <objects>

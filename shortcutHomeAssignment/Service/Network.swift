@@ -31,6 +31,8 @@ class Network {
             throw NetworkError.serverError
         }
         
+        print("DATA", data)
+        
         let comic = try JSONDecoder().decode(Comic.self, from: data)
         let comicUrl = URL(string: comic.img)
         let image = try await fetchImage(url: comicUrl!)

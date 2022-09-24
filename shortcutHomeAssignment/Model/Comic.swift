@@ -3,7 +3,7 @@ import Foundation
 import UIKit
 
 struct Comic: Codable {
-   var title, alt, img: String
+   var title, alt, year, month, transcript, img: String
     var num: Int
 }
 

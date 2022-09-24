@@ -4,5 +4,5 @@ import UIKit
 
 protocol DataProvider {
     
-    func getData() async throws -> UIImage
+    func getData(for number: Int?) async throws -> ComicPresent
     }

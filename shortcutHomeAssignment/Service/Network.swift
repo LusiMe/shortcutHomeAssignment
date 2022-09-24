@@ -4,14 +4,20 @@ import UIKit
 
 class Network {
     
-    private let BASE_URL = "https://xkcd.com/info.0.json"
+    private let BASE_URL = "https://xkcd.com/"
     
     enum methods {
         static let get = "GET"
     }
     
-    private func fetchComic() async throws -> UIImage {
-        let urlBuilder = URLComponents(string: BASE_URL)
+    private func fetchComic(for number: Int?) async throws -> ComicPresent {
+        var fullUrl = String()
+        if number != nil {
+            fullUrl = "\(BASE_URL)\(number!)/info.0.json"
+        } else {
+            fullUrl = "\(BASE_URL)info.0.json"
+        }
+        let urlBuilder = URLComponents(string: fullUrl)
         
         guard let url = urlBuilder?.url else { throw NetworkError.transportError }
         
@@ -28,8 +34,8 @@ class Network {
         let comic = try JSONDecoder().decode(Comic.self, from: data)
         let comicUrl = URL(string: comic.img)
         let image = try await fetchImage(url: comicUrl!)
-        
-        return image
+        let comicPresent = ComicPresent(image: image, comicDetails: comic)
+        return comicPresent
     }
     
     func fetchImage(url:URL) async throws -> UIImage {
@@ -47,9 +53,10 @@ class Network {
 }
 
 extension Network: DataProvider {
-    
-    func getData() async throws -> UIImage {
-        let comic = try await fetchComic()
+        
+    func getData(for number: Int?) async throws -> ComicPresent {
+        let comic = try await fetchComic(for: number)
         return comic
     }
+
 }

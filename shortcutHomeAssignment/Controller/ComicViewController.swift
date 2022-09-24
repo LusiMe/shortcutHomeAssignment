@@ -5,22 +5,19 @@ class ComicViewController: UIViewController {
     
     var data = Network()
     
-    var comic = UIImage()
+    var comic = ComicPresent(image: nil, comicDetails: nil)
 
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let dataManager = DataManager(data: data)
-        print("dataManager", dataManager)
         Task {
             do {
-                print("await comic")
-                comic = try await data.getData()
+                comic = try await data.getData(for: nil)
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
-                print("comic", comic)
             } catch {
                 print("get data issues")
             }
@@ -28,21 +25,40 @@ class ComicViewController: UIViewController {
     }
 }
 
-extension ComicViewController: UICollectionViewDelegate {
-    
-}
-
 extension ComicViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let comicCollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "comicCell", for: indexPath) as! ComicCollectionViewCell
-        comicCollectionCell.comicImage.image = comic
+        if comic.image != nil {
+            comicCollectionCell.comicImage.image = comic.image
+        }
         return comicCollectionCell
     }
     
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+        var comicNumber = Int()
+        
+        if comic.comicDetails?.num != nil {
+            let isScrollingForward = scrollView.panGestureRecognizer.translation(in: self.collectionView.superview).x > 0
+            if isScrollingForward {
+                comicNumber = comic.comicDetails!.num - 1
+            } else {
+                comicNumber = comic.comicDetails!.num + 1
+            }
+        }
+        
+        Task {
+            do {
+                comic = try await data.getData(for: comicNumber)
+                collectionView.reloadData()
+            } catch {
+                print("SCROLL FETCH ISSUES")
+            }
+        }
+    }
     
 }
-

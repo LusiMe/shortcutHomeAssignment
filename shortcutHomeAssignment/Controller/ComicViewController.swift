@@ -11,6 +11,11 @@ class ComicViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.isScrollEnabled = true
+       collectionView.isUserInteractionEnabled = true
+        collectionView.alwaysBounceHorizontal = true
+        
         let dataManager = DataManager(data: data)
         Task {
             do {
@@ -31,7 +36,7 @@ extension ComicViewController: UICollectionViewDelegate {
 
 extension ComicViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -78,6 +83,16 @@ extension ComicViewController: UICollectionViewDataSource {
             } catch {
                 print("SCROLL FETCH ISSUES", error.localizedDescription)
             }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                                 willDisplay cell: UICollectionViewCell,
+                                 forItemAt indexPath: IndexPath) {
+        
+        cell.alpha = 0
+        UIView.animate(withDuration: 0.8) {
+            cell.alpha = 1
         }
     }
     

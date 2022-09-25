@@ -13,9 +13,9 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        comicDetails?.text = title
+        comicDetails?.text = details
         comicDate?.text = date
-        comicTitle?.text = details
+        comicTitle?.text = name
     }
   
 }

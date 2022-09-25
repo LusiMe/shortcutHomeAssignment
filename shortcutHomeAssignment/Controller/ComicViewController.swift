@@ -12,10 +12,6 @@ class ComicViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.isScrollEnabled = true
-       collectionView.isUserInteractionEnabled = true
-        collectionView.alwaysBounceHorizontal = true
-        
         let dataManager = DataManager(data: data)
         Task {
             do {
@@ -57,7 +53,9 @@ extension ComicViewController: UICollectionViewDataSource {
                 let detailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "detailsViewController") as? DetailsViewController
                 detailsVC?.name = comicTitle
                 detailsVC?.date = date
-                detailsVC?.details = comicTranscript
+                detailsVC?.details = comicTranscript.isEmpty ?  comicDetails.alt
+                : comicTranscript
+                print(detailsVC?.details, comicDetails)
                 self.present(detailsVC!, animated: true, completion: nil)
             }
         }

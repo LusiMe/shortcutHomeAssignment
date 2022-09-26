@@ -6,24 +6,28 @@ class Network {
     private let EXPLANATION_URL = "https://www.explainxkcd.com/wiki/api.php"
     private let SEARCH_BY_TITLE_URL = "https://qtg5aekc2iosjh93p.a1.typesense.net/multi_search"
 
+    private let httpSession: HttpRequestProvider
+    
+    init(httpSession: HttpRequestProvider) {
+        self.httpSession = httpSession
+    }
+    
     enum Methods {
         static let get = "GET"
         static let post = "POST"
     }
 
-    private func fetchComic(for number: Int?) async throws -> ComicPresent {
+    private func fetchComic(comicNumber: Int?) async throws -> ComicPresent {
         var fullUrl = String()
-        if number != nil {
-            fullUrl = "\(BASE_URL)\(number!)/info.0.json"
+        if comicNumber != nil {
+            fullUrl = "\(BASE_URL)\(comicNumber!)/info.0.json"
         } else {
             fullUrl = "\(BASE_URL)info.0.json"
         }
         
         let urlBuilder = URLComponents(string: fullUrl)
         guard let url = urlBuilder?.url else { throw NetworkError.transportError }
-        var request = URLRequest(url: url)
-        request.httpMethod = Methods.get
-        let (data, response) = try await URLSession.shared.data(from: url)
+        let (data, response) = try await self.httpSession.getDataWithURL(url: url)
         guard let httpResponce = response as? HTTPURLResponse,
               httpResponce.statusCode == 200 else {
             throw NetworkError.serverError
@@ -36,8 +40,8 @@ class Network {
         return comicPresent
     }
 
-    func fetchImage(url: URL) async throws -> UIImage {
-        let (data, responce) = try await URLSession.shared.data(from: url)
+    private func fetchImage(url: URL) async throws -> UIImage {
+        let (data, responce) = try await self.httpSession.getDataWithURL(url: url)
 
         guard let httpResponse = responce as? HTTPURLResponse, httpResponse.statusCode == 200 else {
             throw NetworkError.serverError
@@ -49,7 +53,7 @@ class Network {
         return image
     }
 
-    func getExplanation(for comicNumber: Int, comicTitle: String) async throws -> String {
+    private func getExplanation(for comicNumber: Int, comicTitle: String) async throws -> String {
         let comicTitle = comicTitle.replacingOccurrences(of: " ", with: "_")
         var urlBuilder = URLComponents(string: EXPLANATION_URL)
         urlBuilder?.queryItems = [
@@ -60,11 +64,7 @@ class Network {
             URLQueryItem(name: "format", value: "json")]
         
         guard let url = urlBuilder?.url else { throw NetworkError.transportError }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = Methods.get
-        
-        let (data, response) = try await URLSession.shared.data(from: url)
+        let (data, response) = try await self.httpSession.getDataWithURL(url: url)
         
         guard let httpResponce = response as? HTTPURLResponse,
               httpResponce.statusCode == 200 else {
@@ -105,7 +105,7 @@ class Network {
         request.httpMethod = Methods.post
         request.httpBody = jsonData
         
-        let (data, response) = try await URLSession.shared.data(for: request)
+        let (data, response) = try await self.httpSession.getDataWithRequest(request: request)
         
         guard let httpResponce = response as? HTTPURLResponse,
               httpResponce.statusCode == 200 else {
@@ -121,22 +121,21 @@ class Network {
         let comicUrl = URL(string: textSearchResultHits[0].document.imageUrl)
         let image = try await fetchImage(url: comicUrl!)
         return ComicPresent(image: image, comicDetails: textSearchResult.convertToComic())
-        
     }
 }
 
 extension Network: DataProvider {
-    func getData(for number: Int?) async throws -> ComicPresent {
-        let comic = try await fetchComic(for: number)
+    func getComic(comicNumber: Int?) async throws -> ComicPresent {
+        let comic = try await fetchComic(comicNumber: comicNumber)
         return comic
     }
     
-    func getComicExplanation(for comicNumber: Int, comicTitle: String) async throws -> String {
+    func getComicExplanation(comicNumber: Int, comicTitle: String) async throws -> String {
         let comicExplanation = try await getExplanation(for: comicNumber, comicTitle: comicTitle)
         return comicExplanation
     }
     
-    func postSearchTitle(title: String) async throws-> ComicPresent {
+    func postSearchTitle(title: String) async throws -> ComicPresent {
         let searchResult = try await searchComicByTitle(title: title)
         return searchResult
     }

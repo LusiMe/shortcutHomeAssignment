@@ -3,4 +3,358 @@
    uuid = "2BAF24F8-AA76-4D8E-A95F-39C886F7B95A"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "53D3145D-038B-4CB7-B567-11A800F5A62C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shortcutHomeAssignmentTests/shortcutHomeAssignmentTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "testShouldReturnComicIfNothingIsProvided()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "53D3145D-038B-4CB7-B567-11A800F5A62C - 563600c762a2028e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for shortcutHomeAssignmentTests.ShortcutHomeAssignmentTests.shouldReturnComicIfNothingIsProvided() async throws -&gt; ()"
+                  moduleName = "shortcutHomeAssignmentTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/markparfenov/Desktop/Dev/shortcutHomeAssignment/shortcutHomeAssignmentTests/shortcutHomeAssignmentTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "93">
+               </Location>
+               <Location
+                  uuid = "53D3145D-038B-4CB7-B567-11A800F5A62C - 4df674a80dfc6b99"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for shortcutHomeAssignmentTests.ShortcutHomeAssignmentTests.testShouldReturnComicIfNothingIsProvided() async throws -&gt; ()"
+                  moduleName = "shortcutHomeAssignmentTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/markparfenov/Desktop/Dev/shortcutHomeAssignment/shortcutHomeAssignmentTests/shortcutHomeAssignmentTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "93">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "005EDEFE-E69F-4088-9371-DB3D19C3372C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shortcutHomeAssignmentTests/shortcutHomeAssignmentTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "testShouldReturnComicIfNothingIsProvided()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EC8926A0-8160-47CF-BC4F-464BAA7AD0C8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shortcutHomeAssignmentTests/MockHttpRequestProvider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "getDataWithRequest(request:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EC8926A0-8160-47CF-BC4F-464BAA7AD0C8 - 2eea68816d8222af"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for shortcutHomeAssignmentTests.MockHttpRequestProvider.getDataWithRequest(request: Foundation.URLRequest) async throws -&gt; (Foundation.Data, __C.NSURLResponse)"
+                  moduleName = "shortcutHomeAssignmentTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/markparfenov/Desktop/Dev/shortcutHomeAssignment/shortcutHomeAssignmentTests/MockHttpRequestProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "857">
+               </Location>
+               <Location
+                  uuid = "EC8926A0-8160-47CF-BC4F-464BAA7AD0C8 - 2eea68816d8222af"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for shortcutHomeAssignmentTests.MockHttpRequestProvider.getDataWithRequest(request: Foundation.URLRequest) async throws -&gt; (Foundation.Data, __C.NSURLResponse)"
+                  moduleName = "shortcutHomeAssignmentTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/markparfenov/Desktop/Dev/shortcutHomeAssignment/shortcutHomeAssignmentTests/MockHttpRequestProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "1032">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "72CB188E-4EA0-4695-A59F-E7ADCAE5B16A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shortcutHomeAssignmentTests/MockHttpRequestProvider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "getDataWithRequest(request:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "72CB188E-4EA0-4695-A59F-E7ADCAE5B16A - 2eea68816d82235e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for shortcutHomeAssignmentTests.MockHttpRequestProvider.getDataWithRequest(request: Foundation.URLRequest) async throws -&gt; (Foundation.Data, __C.NSURLResponse)"
+                  moduleName = "shortcutHomeAssignmentTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/markparfenov/Desktop/Dev/shortcutHomeAssignment/shortcutHomeAssignmentTests/MockHttpRequestProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "10"
+                  endingLineNumber = "10"
+                  offsetFromSymbolStart = "87">
+               </Location>
+               <Location
+                  uuid = "72CB188E-4EA0-4695-A59F-E7ADCAE5B16A - 2eea68816d82235e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for shortcutHomeAssignmentTests.MockHttpRequestProvider.getDataWithRequest(request: Foundation.URLRequest) async throws -&gt; (Foundation.Data, __C.NSURLResponse)"
+                  moduleName = "shortcutHomeAssignmentTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/markparfenov/Desktop/Dev/shortcutHomeAssignment/shortcutHomeAssignmentTests/MockHttpRequestProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "10"
+                  endingLineNumber = "10"
+                  offsetFromSymbolStart = "322">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C53BAAAE-0C87-43E5-860B-3733F8570A70"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shortcutHomeAssignmentTests/MockHttpRequestProvider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "getDataWithRequest(request:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C15A9B21-1136-43E4-9F17-834AD619557E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shortcutHomeAssignmentTests/MockHttpRequestProvider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "getDataWithRequest(request:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C15A9B21-1136-43E4-9F17-834AD619557E - b6de4d379a046374"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shortcutHomeAssignmentTests.MockHttpRequestProvider.getDataWithRequest(request: Foundation.URLRequest) async throws -&gt; (Foundation.Data, __C.NSURLResponse)"
+                  moduleName = "shortcutHomeAssignmentTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/markparfenov/Desktop/Dev/shortcutHomeAssignment/shortcutHomeAssignmentTests/MockHttpRequestProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "9"
+                  endingLineNumber = "9"
+                  offsetFromSymbolStart = "190">
+               </Location>
+               <Location
+                  uuid = "C15A9B21-1136-43E4-9F17-834AD619557E - 2eea68816d8224bf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for shortcutHomeAssignmentTests.MockHttpRequestProvider.getDataWithRequest(request: Foundation.URLRequest) async throws -&gt; (Foundation.Data, __C.NSURLResponse)"
+                  moduleName = "shortcutHomeAssignmentTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/markparfenov/Desktop/Dev/shortcutHomeAssignment/shortcutHomeAssignmentTests/MockHttpRequestProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "9"
+                  endingLineNumber = "9"
+                  offsetFromSymbolStart = "67">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CFBFC16A-B203-403E-9F20-4CCEF16F0D37"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shortcutHomeAssignment/Service/Network.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "searchComicByTitle(title:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CFBFC16A-B203-403E-9F20-4CCEF16F0D37 - 71b9a80511c776ae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for shortcutHomeAssignment.Network.searchComicByTitle(title: Swift.String) async throws -&gt; shortcutHomeAssignment.ComicPresent"
+                  moduleName = "shortcutHomeAssignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/markparfenov/Desktop/Dev/shortcutHomeAssignment/shortcutHomeAssignment/Service/Network.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "537">
+               </Location>
+               <Location
+                  uuid = "CFBFC16A-B203-403E-9F20-4CCEF16F0D37 - 71b9a80511c776ae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for shortcutHomeAssignment.Network.searchComicByTitle(title: Swift.String) async throws -&gt; shortcutHomeAssignment.ComicPresent"
+                  moduleName = "shortcutHomeAssignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/markparfenov/Desktop/Dev/shortcutHomeAssignment/shortcutHomeAssignment/Service/Network.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "1194">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "16D019D4-7805-4B71-B122-0C74584BF04D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shortcutHomeAssignmentTests/MockHttpRequestProvider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "getDataWithRequest(request:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "16D019D4-7805-4B71-B122-0C74584BF04D - 2eea68816d8223f1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for shortcutHomeAssignmentTests.MockHttpRequestProvider.getDataWithRequest(request: Foundation.URLRequest) async throws -&gt; (Foundation.Data, __C.NSURLResponse)"
+                  moduleName = "shortcutHomeAssignmentTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/markparfenov/Desktop/Dev/shortcutHomeAssignment/shortcutHomeAssignmentTests/MockHttpRequestProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "671">
+               </Location>
+               <Location
+                  uuid = "16D019D4-7805-4B71-B122-0C74584BF04D - 2eea68816d8223d2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for shortcutHomeAssignmentTests.MockHttpRequestProvider.getDataWithRequest(request: Foundation.URLRequest) async throws -&gt; (Foundation.Data, __C.NSURLResponse)"
+                  moduleName = "shortcutHomeAssignmentTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/markparfenov/Desktop/Dev/shortcutHomeAssignment/shortcutHomeAssignmentTests/MockHttpRequestProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "599">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "16B4D2F9-43D4-4684-B9AD-B9AD77E62615"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shortcutHomeAssignment/Service/Network.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "searchComicByTitle(title:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "60DAB7D3-CE00-48D5-88AF-C37156522908"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shortcutHomeAssignment/Service/Network.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "searchComicByTitle(title:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -1,7 +1,7 @@
 import UIKit
 
 class ComicViewController: UIViewController {
-    var data = Network()
+    var data = Network(httpSession: HttpRequest())
     var comic = ComicPresent(image: nil, comicDetails: nil)
     var comicExplanation = String()
     
@@ -17,7 +17,7 @@ class ComicViewController: UIViewController {
         searchBar.delegate = self
         Task {
             do {
-                comic = try await data.getData(for: nil)
+                comic = try await data.getComic(comicNumber: nil as Int?)
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
@@ -27,6 +27,9 @@ class ComicViewController: UIViewController {
         }
     }
     
+    //
+    // MARK: - View Controller
+    //
     @IBAction func presentDetails(_ sender: UIButton) {
         if let comicDetails = comic.comicDetails {
             let comicTitle = comicDetails.title
@@ -55,7 +58,7 @@ class ComicViewController: UIViewController {
            let comicTitle = comic.comicDetails?.title {
             Task {
                 do {
-                    comicExplanation = try await data.getExplanation(for: comicNumber, comicTitle: comicTitle)
+                    comicExplanation = try await data.getComicExplanation(comicNumber: comicNumber, comicTitle: comicTitle)
                     explanationVC!.explanation = comicExplanation
                     DispatchQueue.main.async {
                         self.present(explanationVC!, animated: true, completion: nil)
@@ -71,7 +74,9 @@ class ComicViewController: UIViewController {
 extension ComicViewController: UICollectionViewDelegate {
     
 }
-
+//
+// MARK: - Table View Data Source
+//
 extension ComicViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
@@ -101,7 +106,7 @@ extension ComicViewController: UICollectionViewDataSource {
         
         Task {
             do {
-                comic = try await data.getData(for: comicNumber)
+                comic = try await data.getComic(comicNumber: comicNumber)
                 collectionView.reloadData()
             } catch {
                 print("SCROLL FETCH ISSUES", error.localizedDescription)
@@ -120,6 +125,10 @@ extension ComicViewController: UICollectionViewDataSource {
     }
 }
 
+//
+// MARK: Search Bar Delegate
+//
+
 extension ComicViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard (searchBar.text?.isEmpty) != nil else {
@@ -130,7 +139,7 @@ extension ComicViewController: UISearchBarDelegate {
             let searchDigit = Int(searchBar.text!)
             Task {
                 do {
-                    comic = try await data.getData(for: searchDigit)
+                    comic = try await data.getComic(comicNumber: searchDigit)
                     DispatchQueue.main.async {
                         self.collectionView.reloadData()
                     }

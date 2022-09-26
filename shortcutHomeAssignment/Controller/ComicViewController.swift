@@ -7,7 +7,12 @@ class ComicViewController: UIViewController {
     
     var comic = ComicPresent(image: nil, comicDetails: nil)
     
+    var comicExplanation = String()
+    
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    @IBOutlet weak var presentDescription: UIButton!
+    @IBOutlet weak var presentExplanation: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +26,43 @@ class ComicViewController: UIViewController {
                 }
             } catch {
                 print("get data issues")
+            }
+        }
+    }
+    
+    
+    @IBAction func presentDetails(_ sender: UIButton) {
+        if let comicDetails = comic.comicDetails {
+            let comicTitle = comicDetails.title
+            let comicTranscript = comicDetails.transcript
+            let date = "\(comicDetails.year).\(comicDetails.month)"
+            
+            DispatchQueue.main.async() {
+                let detailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "detailsViewController") as? DetailsViewController
+                detailsVC?.name = comicTitle
+                detailsVC?.date = date
+                detailsVC?.details = comicTranscript.isEmpty ?  comicDetails.alt
+                : comicTranscript
+                print(detailsVC?.details, comicDetails)
+                self.present(detailsVC!, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    @IBAction func presentExplanation(_ sender: UIButton) {
+        let explanationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "explanationViewController") as? ExplanationViewController
+        if let comicNumber = comic.comicDetails?.num,
+            let comicTitle = comic.comicDetails?.title {
+            Task {
+                do {
+                    comicExplanation = try await data.getExplanation(for: comicNumber, comicTitle: comicTitle)
+                    explanationVC!.explanation = comicExplanation
+                    DispatchQueue.main.async {
+                        self.present(explanationVC!, animated: true, completion: nil)
+                    }
+                } catch {
+                    print("get data issues", error)
+                }
             }
         }
     }
@@ -41,24 +83,6 @@ extension ComicViewController: UICollectionViewDataSource {
             comicCollectionCell.comicImage.image = comic.image
         }
         return comicCollectionCell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let comicDetails = comic.comicDetails {
-            let comicTitle = comicDetails.title
-            let comicTranscript = comicDetails.transcript
-            let date = "\(comicDetails.year).\(comicDetails.month)"
-            
-            DispatchQueue.main.async() {
-                let detailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "detailsViewController") as? DetailsViewController
-                detailsVC?.name = comicTitle
-                detailsVC?.date = date
-                detailsVC?.details = comicTranscript.isEmpty ?  comicDetails.alt
-                : comicTranscript
-                print(detailsVC?.details, comicDetails)
-                self.present(detailsVC!, animated: true, completion: nil)
-            }
-        }
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

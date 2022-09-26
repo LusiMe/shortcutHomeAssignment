@@ -6,6 +6,9 @@ class Network {
     
     private let BASE_URL = "https://xkcd.com/"
     
+    private let EXPLANATION_URL = "https://www.explainxkcd.com/wiki/api.php"
+//    ?action=parse&page=2172:_Lunar_Cycles&prop=text&sectiontitle=Explanation&format=json"
+    
     enum methods {
         static let get = "GET"
     }
@@ -52,13 +55,48 @@ class Network {
         }
         return image
     }
+    
+    func getExplanation(for comicNumber: Int, comicTitle: String) async throws -> String {
+        let comicTitle = comicTitle.replacingOccurrences(of: " ", with: "_")
+        var urlBuilder = URLComponents(string: EXPLANATION_URL)
+        urlBuilder?.queryItems = [
+        URLQueryItem(name: "action", value: "parse"),
+        URLQueryItem(name: "page", value: "\(comicNumber):_\(comicTitle)"),
+        URLQueryItem(name: "prop", value: "text"),
+        URLQueryItem(name: "sectiontitle", value: "Explanation"),
+        URLQueryItem(name: "format", value: "json")]
+        
+        guard let url = urlBuilder?.url else { throw NetworkError.transportError }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = methods.get
+        
+        let (data, response) = try await URLSession.shared.data(from: url)
+        
+        guard let httpResponce = response as? HTTPURLResponse,
+              httpResponce.statusCode == 200 else {
+            throw NetworkError.serverError
+        }
+        
+        print("DATA", data)
+        
+        let comicExplanation = try JSONDecoder().decode(ComicExplanation.self, from: data)
+        let text = comicExplanation.parse.text.explanation
+        
+        print(ParseHelper.parseComicExplanation(for: text))
+        return ParseHelper.parseComicExplanation(for: text)
+    }
 }
 
 extension Network: DataProvider {
-        
+
     func getData(for number: Int?) async throws -> ComicPresent {
         let comic = try await fetchComic(for: number)
         return comic
     }
 
+    func getComicExplanation(for comicNumber: Int, comicTitle: String) async throws -> String {
+        let comicExplanation = try await getExplanation(for: comicNumber, comicTitle: comicTitle)
+        return comicExplanation
+    }
 }

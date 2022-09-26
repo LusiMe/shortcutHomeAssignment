@@ -16,3 +16,21 @@ struct ComicPresent {
 //        self.comicDetails = comic
 //    }
 }
+
+struct ComicExplanation: Codable {
+    var parse: Wikitext
+}
+
+struct Wikitext: Codable {
+    var text: Explanation
+}
+
+struct Explanation: Codable {
+    var explanation: String
+    
+    enum CodingKeys: String, CodingKey {
+        case explanation = "*"
+    }
+}
+
+

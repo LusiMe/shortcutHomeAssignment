@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C60B03C328E08AB1008D4EE3 /* ExplanationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60B03C228E08AB1008D4EE3 /* ExplanationViewController.swift */; };
+		C60B03C528E099A9008D4EE3 /* ParseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60B03C428E099A9008D4EE3 /* ParseHelper.swift */; };
 		C61404D228DF088400424F93 /* ComicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61404D128DF088400424F93 /* ComicCollectionViewCell.swift */; };
 		C61404D428DF5CFF00424F93 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61404D328DF5CFF00424F93 /* DetailsViewController.swift */; };
 		C684452128DE0710000F2A82 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684452028DE0710000F2A82 /* Network.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C60B03C228E08AB1008D4EE3 /* ExplanationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationViewController.swift; sourceTree = "<group>"; };
+		C60B03C428E099A9008D4EE3 /* ParseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseHelper.swift; sourceTree = "<group>"; };
 		C61404D128DF088400424F93 /* ComicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCollectionViewCell.swift; sourceTree = "<group>"; };
 		C61404D328DF5CFF00424F93 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		C684452028DE0710000F2A82 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 			children = (
 				C6BD1F0A28DDB6F500B440F0 /* ComicViewController.swift */,
 				C61404D328DF5CFF00424F93 /* DetailsViewController.swift */,
+				C60B03C228E08AB1008D4EE3 /* ExplanationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 			children = (
 				C684452028DE0710000F2A82 /* Network.swift */,
 				C684452828DE1B5C000F2A82 /* DataManager.swift */,
+				C60B03C428E099A9008D4EE3 /* ParseHelper.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -313,6 +319,7 @@
 			files = (
 				C684452528DE19D9000F2A82 /* DataProvider.swift in Sources */,
 				C684452928DE1B5C000F2A82 /* DataManager.swift in Sources */,
+				C60B03C328E08AB1008D4EE3 /* ExplanationViewController.swift in Sources */,
 				C6BD1F0B28DDB6F500B440F0 /* ComicViewController.swift in Sources */,
 				C684452728DE1A2F000F2A82 /* Comic.swift in Sources */,
 				C6BD1F0728DDB6F500B440F0 /* AppDelegate.swift in Sources */,
@@ -321,6 +328,7 @@
 				C684452128DE0710000F2A82 /* Network.swift in Sources */,
 				C6BD1F0928DDB6F500B440F0 /* SceneDelegate.swift in Sources */,
 				C684452328DE198E000F2A82 /* NetworkError.swift in Sources */,
+				C60B03C528E099A9008D4EE3 /* ParseHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,8 +1,6 @@
-
 import UIKit
 
 class DetailsViewController: UIViewController {
-    
     var name = String()
     var date = String()
     var details = String()
@@ -17,5 +15,5 @@ class DetailsViewController: UIViewController {
         comicDate?.text = date
         comicTitle?.text = name
     }
-  
+    
 }

@@ -25,6 +25,7 @@
 		C6BD1F1E28DDB6F900B440F0 /* shortcutHomeAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BD1F1D28DDB6F900B440F0 /* shortcutHomeAssignmentTests.swift */; };
 		C6BD1F2828DDB6F900B440F0 /* shortcutHomeAssignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BD1F2728DDB6F900B440F0 /* shortcutHomeAssignmentUITests.swift */; };
 		C6BD1F2A28DDB6F900B440F0 /* shortcutHomeAssignmentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BD1F2928DDB6F900B440F0 /* shortcutHomeAssignmentUITestsLaunchTests.swift */; };
+		C6DCACA428E2032400A10D4D /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C6DCACA328E2032400A10D4D /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		C6BD1F2328DDB6F900B440F0 /* shortcutHomeAssignmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = shortcutHomeAssignmentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6BD1F2728DDB6F900B440F0 /* shortcutHomeAssignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shortcutHomeAssignmentUITests.swift; sourceTree = "<group>"; };
 		C6BD1F2928DDB6F900B440F0 /* shortcutHomeAssignmentUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shortcutHomeAssignmentUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C6DCACA328E2032400A10D4D /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				C6BD1F0F28DDB6F900B440F0 /* Assets.xcassets */,
 				C6BD1F1128DDB6F900B440F0 /* LaunchScreen.storyboard */,
 				C6BD1F1428DDB6F900B440F0 /* Info.plist */,
+				C6DCACA328E2032400A10D4D /* .swiftlint.yml */,
 			);
 			path = shortcutHomeAssignment;
 			sourceTree = "<group>";
@@ -196,12 +199,15 @@
 				C6BD1EFF28DDB6F500B440F0 /* Sources */,
 				C6BD1F0028DDB6F500B440F0 /* Frameworks */,
 				C6BD1F0128DDB6F500B440F0 /* Resources */,
+				C6DCACA228E2020A00A10D4D /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = shortcutHomeAssignment;
+			packageProductDependencies = (
+			);
 			productName = shortcutHomeAssignment;
 			productReference = C6BD1F0328DDB6F500B440F0 /* shortcutHomeAssignment.app */;
 			productType = "com.apple.product-type.application";
@@ -274,6 +280,9 @@
 				Base,
 			);
 			mainGroup = C6BD1EFA28DDB6F500B440F0;
+			packageReferences = (
+				C6DCAC9B28E1FE1800A10D4D /* XCRemoteSwiftPackageReference "swift-format" */,
+			);
 			productRefGroup = C6BD1F0428DDB6F500B440F0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -290,6 +299,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6DCACA428E2032400A10D4D /* .swiftlint.yml in Resources */,
 				C6BD1F1328DDB6F900B440F0 /* LaunchScreen.storyboard in Resources */,
 				C6BD1F1028DDB6F900B440F0 /* Assets.xcassets in Resources */,
 				C6BD1F0E28DDB6F500B440F0 /* Main.storyboard in Resources */,
@@ -311,6 +321,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C6DCACA228E2020A00A10D4D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C6BD1EFF28DDB6F500B440F0 /* Sources */ = {
@@ -664,6 +694,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C6DCAC9B28E1FE1800A10D4D /* XCRemoteSwiftPackageReference "swift-format" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-format.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.50700.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = C6BD1EFB28DDB6F500B440F0 /* Project object */;
 }

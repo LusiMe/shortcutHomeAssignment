@@ -1,12 +1,8 @@
-
 import UIKit
 
 class ComicViewController: UIViewController {
-    
     var data = Network()
-    
     var comic = ComicPresent(image: nil, comicDetails: nil)
-    
     var comicExplanation = String()
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -19,7 +15,6 @@ class ComicViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
-        let dataManager = DataManager(data: data)
         Task {
             do {
                 comic = try await data.getData(for: nil)
@@ -32,29 +27,32 @@ class ComicViewController: UIViewController {
         }
     }
     
-    
     @IBAction func presentDetails(_ sender: UIButton) {
         if let comicDetails = comic.comicDetails {
             let comicTitle = comicDetails.title
             let comicTranscript = comicDetails.transcript
             let date = "\(comicDetails.year).\(comicDetails.month)"
             
-            DispatchQueue.main.async() {
-                let detailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "detailsViewController") as? DetailsViewController
+            DispatchQueue.main.async {
+                let detailsVC = UIStoryboard(name: "Main", bundle: nil)
+                    .instantiateViewController(identifier: "detailsViewController")
+                as? DetailsViewController
                 detailsVC?.name = comicTitle
                 detailsVC?.date = date
-                detailsVC?.details = comicTranscript.isEmpty ?  comicDetails.alt
-                : comicTranscript
-                print(detailsVC?.details, comicDetails)
+                detailsVC?.details = comicTranscript.isEmpty
+                    ?  comicDetails.alt
+                    : comicTranscript
                 self.present(detailsVC!, animated: true, completion: nil)
             }
         }
     }
     
     @IBAction func presentExplanation(_ sender: UIButton) {
-        let explanationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "explanationViewController") as? ExplanationViewController
+        let explanationVC = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(identifier: "explanationViewController")
+        as? ExplanationViewController
         if let comicNumber = comic.comicDetails?.num,
-            let comicTitle = comic.comicDetails?.title {
+           let comicTitle = comic.comicDetails?.title {
             Task {
                 do {
                     comicExplanation = try await data.getExplanation(for: comicNumber, comicTitle: comicTitle)
@@ -88,11 +86,12 @@ extension ComicViewController: UICollectionViewDataSource {
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        
         var comicNumber = Int()
-        
         if comic.comicDetails?.num != nil {
-            let isScrollingForward = scrollView.panGestureRecognizer.translation(in: self.collectionView.superview).x > 0
+            let isScrollingForward = scrollView
+                .panGestureRecognizer
+                .translation(in: self.collectionView.superview)
+                .x > 0
             if isScrollingForward {
                 comicNumber = comic.comicDetails!.num + 1
             } else {
@@ -111,8 +110,8 @@ extension ComicViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView,
-                                 willDisplay cell: UICollectionViewCell,
-                                 forItemAt indexPath: IndexPath) {
+                        willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
         
         cell.alpha = 0
         UIView.animate(withDuration: 0.8) {
@@ -123,11 +122,11 @@ extension ComicViewController: UICollectionViewDataSource {
 
 extension ComicViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard ((searchBar.text?.isEmpty) != nil) else {
+        guard (searchBar.text?.isEmpty) != nil else {
             print("empty search bar")
             return
         }
-        if searchBar.text!.isInt{
+        if searchBar.text!.isInt {
             let searchDigit = Int(searchBar.text!)
             Task {
                 do {

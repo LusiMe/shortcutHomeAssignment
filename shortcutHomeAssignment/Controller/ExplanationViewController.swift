@@ -1,8 +1,7 @@
-
 import UIKit
 
 class ExplanationViewController: UIViewController {
-
+    
     @IBOutlet weak var comicExplanation: UILabel!
     
     var explanation = String()
@@ -11,6 +10,4 @@ class ExplanationViewController: UIViewController {
         super.viewDidLoad()
         self.comicExplanation?.text = explanation
     }
-   
-
 }

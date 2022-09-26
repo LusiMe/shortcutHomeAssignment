@@ -4,7 +4,8 @@ import Foundation
 class ParseHelper {
     static func parseComicExplanation(for text: String) -> String {
         let formatedText = text.htmlToString
-        let explanation = formatedText.split(separator: "page! Thanks.")[1]
+        print(formatedText)
+        let explanation = formatedText.split(separator: "Explanation[edit]")[1]
         let cutTranscript = explanation.split(separator: "Transcript")[0]
         return String(cutTranscript)
     }
@@ -19,7 +20,13 @@ extension String {
             return nil
         }
     }
+    
     var htmlToString: String {
         return htmlToAttributedString?.string ?? ""
     }
-}
+    
+    var isInt: Bool {
+            return Int(self) != nil
+        }
+    }
+

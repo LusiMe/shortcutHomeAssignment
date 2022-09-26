@@ -19,7 +19,7 @@
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Pc2-1L-Tyh">
                                 <rect key="frame" x="0.0" y="52" width="390" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="6fL-7e-CYd" id="Mvf-wY-9ZY"/>
                                 </connections>
@@ -104,6 +104,7 @@
                         <outlet property="collectionView" destination="koh-fY-uai" id="rH5-5W-Nlw"/>
                         <outlet property="presentDescription" destination="0lF-X4-MCc" id="Mkv-kA-iFA"/>
                         <outlet property="presentExplanation" destination="r8X-hc-UhV" id="EbH-gs-gAU"/>
+                        <outlet property="searchBar" destination="Pc2-1L-Tyh" id="MTz-bt-0iZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgq-Pk-95M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

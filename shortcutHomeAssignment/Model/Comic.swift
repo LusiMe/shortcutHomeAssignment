@@ -33,4 +33,20 @@ struct Explanation: Codable {
     }
 }
 
+struct TextSearchResult: Codable {
+    var results: [Hits]
+}
+
+struct Hits: Codable {
+    var hits: [Documents]
+}
+
+struct Documents: Codable {
+    var document: Document
+}
+
+struct Document: Codable {
+    var imageUrl, id, title, altTitle: String
+    var publishDateMonth, publishDateYear: Int
+}
 

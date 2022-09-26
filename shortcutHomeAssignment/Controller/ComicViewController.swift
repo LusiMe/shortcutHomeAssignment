@@ -14,9 +14,11 @@ class ComicViewController: UIViewController {
     @IBOutlet weak var presentDescription: UIButton!
     @IBOutlet weak var presentExplanation: UIButton!
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        searchBar.delegate = self
         let dataManager = DataManager(data: data)
         Task {
             do {
@@ -117,5 +119,38 @@ extension ComicViewController: UICollectionViewDataSource {
             cell.alpha = 1
         }
     }
-    
+}
+
+extension ComicViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard ((searchBar.text?.isEmpty) != nil) else {
+            print("empty search bar")
+            return
+        }
+        if searchBar.text!.isInt{
+            let searchDigit = Int(searchBar.text!)
+            Task {
+                do {
+                    comic = try await data.getData(for: searchDigit)
+                    DispatchQueue.main.async {
+                        self.collectionView.reloadData()
+                    }
+                } catch {
+                    print("get data issues", error)
+                }
+            }
+        } else {
+            let searchTitle = searchBar.text
+            Task {
+                do {
+                    comic = try await data.postSearchTitle(title: searchTitle!)
+                    DispatchQueue.main.async {
+                        self.collectionView.reloadData()
+                    }
+                } catch {
+                    print("get data issues", error.localizedDescription)
+                }
+            }
+        }
+    }
 }

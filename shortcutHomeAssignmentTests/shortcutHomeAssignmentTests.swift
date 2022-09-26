@@ -1,7 +1,7 @@
 import XCTest
 @testable import shortcutHomeAssignment
 
-final class shortcutHomeAssignmentTests: XCTestCase {
+final class ShortcutHomeAssignmentTests: XCTestCase {
 
     override func setUpWithError() throws {
     }

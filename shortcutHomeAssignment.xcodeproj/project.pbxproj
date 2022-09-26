@@ -69,6 +69,7 @@
 		C6BD1F2728DDB6F900B440F0 /* shortcutHomeAssignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shortcutHomeAssignmentUITests.swift; sourceTree = "<group>"; };
 		C6BD1F2928DDB6F900B440F0 /* shortcutHomeAssignmentUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shortcutHomeAssignmentUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C6DCACA328E2032400A10D4D /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		C6DCACA528E2232100A10D4D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +138,7 @@
 		C6BD1EFA28DDB6F500B440F0 = {
 			isa = PBXGroup;
 			children = (
+				C6DCACA528E2232100A10D4D /* README.md */,
 				C6BD1F0528DDB6F500B440F0 /* shortcutHomeAssignment */,
 				C6BD1F1C28DDB6F900B440F0 /* shortcutHomeAssignmentTests */,
 				C6BD1F2628DDB6F900B440F0 /* shortcutHomeAssignmentUITests */,

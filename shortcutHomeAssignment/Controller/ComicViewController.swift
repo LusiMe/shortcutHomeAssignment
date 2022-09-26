@@ -78,11 +78,11 @@ extension ComicViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let comicCollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "comicCell", for: indexPath) as! ComicCollectionViewCell
+        let comicCollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "comicCell", for: indexPath) as? ComicCollectionViewCell
         if comic.image != nil {
-            comicCollectionCell.comicImage.image = comic.image
+            comicCollectionCell!.comicImage.image = comic.image
         }
-        return comicCollectionCell
+        return comicCollectionCell!
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

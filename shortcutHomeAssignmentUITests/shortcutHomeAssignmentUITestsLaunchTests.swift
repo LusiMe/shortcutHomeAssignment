@@ -1,7 +1,7 @@
 
 import XCTest
 
-final class shortcutHomeAssignmentUITestsLaunchTests: XCTestCase {
+final class ShortcutHomeAssignmentUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

@@ -1,4 +1,4 @@
-#  Shortcut home assignment
+#  Comic App
 ## Quick overview
 The application allows browse through comics one by one, see description and explanation as modal windows, search for comic by number and by title.
 In project was used MVC design pattern and Swift with Storyboard. For dependency management was used dependency injection. 
